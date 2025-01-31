@@ -87,9 +87,19 @@ public class HW1 {
          */
         public void removeElementsLT ( int ltValue ) {
 
-            // YOUR CODE GOES HERE
+            while (head != null && head.data < ltValue) {
+                head = head.next;
+            }
 
-            return;
+            Node current = head;
+            while (current != null && current.next != null) {
+                if (current.next.data < ltValue) {
+                    current.next = current.next.next;
+                } else {
+                    current = current.next;
+                }
+            }
+            
         }
 
 
@@ -100,9 +110,20 @@ public class HW1 {
 
         public void removeElement ( int value ) {
 
-            // YOUR CODE GOES HERE
+            while (head != null && head.data == value) {
+                head = head.next;
+            }
 
-            return;
+            Node current = head;
+            while (current != null && current.next != null) {
+                if (current.next.data == value) {
+                    current.next = current.next.next;
+                } else {
+                    current = current.next;
+                }
+            }
+
+        
         }
 
 
